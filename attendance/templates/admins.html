@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Student log-in{% endblock title %}
+{% block body %}
+
+<div class="container-fluid my-5 px-0">
+    <h1 class="text-center mb-y">Admins log-in</h1>
+</div>
+<div class="container">
+    <form method="post" action="admins">
+    {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+</div>
+{% endblock body %}

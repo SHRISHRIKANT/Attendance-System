@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Attendance list{% endblock title %}
+{% block body %}
+
+<div class="container my-4">
+
+    <h1 class="text-center mb-4">Attendance-list</h1>
+
+    <table class="table table-hover">
+
+    <thead>
+        <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Roll-no</th>
+        <th scope="col">Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    {% for i in attend_list %}
+
+        <tr>
+            <td>{{i}}</td>
+            <td>{{i.Lname}}</td>
+            <td>{{i.Status}}</td>
+            <td><a href="edit/{{i.Lname}}">Edit</a><td>
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+    </table>
+</div>
+{% endblock body%}
